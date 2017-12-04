@@ -1,1 +1,74 @@
-/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: BMW-Bold;
+    src: url("assets/fonts/BMWTypeWebBoldAll.woff");
+}
+
+@font-face {
+    font-family: BMW-Light;
+    src: url("assets/fonts/BMWTypeWebLightAll.woff");
+}
+
+
+$headline-main-size: 55px;
+$headline-secondary-size: 33px;
+$headline-color: #272727;
+
+* {
+    margin: 0;
+    padding: 0;
+    //background-color: whitesmoke;
+  }
+
+  html{
+      padding-top: 15px;
+      font-family: 'Arial';
+  }
+
+  .normal-page{
+      padding:0px 30px 0px;
+  }
+
+  @mixin header-main($clr){
+      font-size: $headline-main-size;
+      color: $clr;
+      font-family: 'BMW-Bold';
+      font-kerning: -45px;
+      text-transform: uppercase;
+  }
+
+  @mixin header-secondary($clr){
+    font-size: $headline-secondary-size;
+    color: $clr;
+    font-family: 'BMW-Bold';
+    font-kerning: -45px;
+    text-transform: uppercase;
+}
+
+  .placeholder-image{
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: black;
+      img{
+        position: absolute;
+        margin: auto;
+        width: 50%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      .header{
+        position: absolute;
+        bottom: 100px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        z-index: 10;
+        @include header-secondary(white);
+         
+      }
+  }

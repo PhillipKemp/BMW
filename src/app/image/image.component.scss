@@ -1,0 +1,16 @@
+$width-max: 985px;
+$height-max: 355px;
+
+$height-width-ratio: $height-max / $width-max;
+
+@import "../../stylesheet-variables.scss";
+
+.image-slider{
+    min-width: $width-max;
+    min-height: $height-max;
+    img{
+        width: 100%;
+    }
+    width: 100%;
+    
+}
