@@ -1,3 +1,17 @@
 <div class="image-slider">
-  <img src="../../assets/1-cropped.jpg"/>
+  <img [src]="mainImage.img"/>
+  <div class="image-details">
+    <h1>{{mainImage.details.main}}</h1>
+    <h2>{{mainImage.details.secondary}}</h2>
+    <a class="bmw-primary-button" routerLink="/1">
+      <fa name="caret-right"></fa>
+      {{mainImage.details.button.text}}
+    </a>
+  </div>
+  <div class="image-controls">
+    <div *ngFor="let thumb of sliderImages" class="thumb" (click)="openImage(thumb)">
+        <img [src]="thumb.img" />
+        <div *ngIf="thumb.showing"></div>
+    </div>
+  </div>
 </div>

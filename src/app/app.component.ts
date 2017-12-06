@@ -1,35 +1,17 @@
 import { Component } from '@angular/core';
-import {
-  trigger,
-  state,
-  query,
-  group,
-  style,
-  animate,
-  transition
-} from '@angular/animations';
-
+import { fadeAnimation } from './animations/fade.animation';
 
 @Component({
   selector: 'app-root',
-  animations:  [
-    trigger('routerAnimations', [
-      transition('* => *', 
-      [
-        //query(':leave', []),
-        //query(':enter', [])
-      ]
-    )
-    ]),
-  ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [fadeAnimation],
 })
 export class AppComponent {
   title = 'BMW Driver Training';
 
-  prepareRouteTransition(outlet) {
-    return outlet.activatedRouteData.animation
+  public getRouterOutletState(outlet) {
+    return outlet.isActivated ? outlet.activatedRoute : '';
   }
 
 }

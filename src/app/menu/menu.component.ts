@@ -19,25 +19,25 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
 
-    this.menuItemsMain.push({ name: "Home", href: "/", state:'inactive' });
-    this.menuItemsMain.push({ name: "1", href: "/1", state:'inactive' });
-    this.menuItemsMain.push({ name: "3", href: "/", state:'inactive' });
-    this.menuItemsMain.push({ name: "5", href: "/", state:'inactive' });
-    this.menuItemsMain.push({ name: "6", href: "/", state:'inactive' });
-    this.menuItemsMain.push({ name: "7", href: "/", state:'inactive' });
-    this.menuItemsMain.push({ name: "X", href: "/", state:'inactive' });
-    this.menuItemsMain.push({ name: "Z4", href: "/", state:'inactive' });
-    this.menuItemsMain.push({ name: "M", href: "/", state:'inactive' });
-    this.menuItemsMain.push({ name: "Approved Used Cars", href: "/", state:'inactive' });
-    this.menuItemsMain.push({ name: "Owner's Circle", href: "/", state:'inactive' });
-    this.menuItemsMain.push({ name: "BMW Driver Training", href: "/", state:'inactive' });
+    this.menuItemsMain.push({ name: "Home", href: "/home"});
+    this.menuItemsMain.push({ name: "1", href: "/1"});
+    this.menuItemsMain.push({ name: "3", href: "/"});
+    this.menuItemsMain.push({ name: "5", href: "/"});
+    this.menuItemsMain.push({ name: "6", href: "/"});
+    this.menuItemsMain.push({ name: "7", href: "/"});
+    this.menuItemsMain.push({ name: "X", href: "/"});
+    this.menuItemsMain.push({ name: "Z4", href: "/"});
+    this.menuItemsMain.push({ name: "M", href: "/"});
+    this.menuItemsMain.push({ name: "Approved Used Cars", href: "/"});
+    this.menuItemsMain.push({ name: "Owner's Circle", href: "/"});
+    this.menuItemsMain.push({ name: "BMW Driver Training", href: "/"});
 
-    this.menuItemsSecondary.push({ name: "Virtual Dealer", href:"", state:'inactive' });
-    this.menuItemsSecondary.push({ name: "Products", href:"", state:'inactive' });
-    this.menuItemsSecondary.push({ name: "Services", href:"", state:'inactive' });
-    this.menuItemsSecondary.push({ name: "BMW Driver Training", href:"", state:'inactive' });
-    this.menuItemsSecondary.push({ name: "Lifestyle & Accessories", href:"", state:'inactive' });
-    this.menuItemsSecondary.push({ name: "BMW Financial Services", href:"", state:'inactive' });
+    this.menuItemsSecondary.push({ name: "Virtual Dealer", href:""});
+    this.menuItemsSecondary.push({ name: "Products", href:""});
+    this.menuItemsSecondary.push({ name: "Services", href:""});
+    this.menuItemsSecondary.push({ name: "BMW Driver Training", href:""});
+    this.menuItemsSecondary.push({ name: "Lifestyle & Accessories", href:""});
+    this.menuItemsSecondary.push({ name: "BMW Financial Services", href:""});
 
   }
 
