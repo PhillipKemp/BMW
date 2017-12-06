@@ -4,12 +4,21 @@
         <div class="menu-items">
             <div class="menu-items-primary">
                 <ul >
-                    <li *ngFor="let item of menuItemsMain" ><a [routerLink]="item.href" routerLinkActive="active">{{item.name}}</a></li>
+                    <li class="bmw-li" *ngFor="let item of menuItemsMain" ><a [routerLink]="item.href" routerLinkActive="active">{{item.name}}</a>
+                        <ul class="dropdown-body" *ngIf="item.dropdown">
+                            <li><a href="#">Overview</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Courses</a></li>
+                            <li><a href="#">Corporate and Team Events</a></li>
+                            <li><a href="#">Instructors</a></li>
+                            <li><a href="#">How to find Us</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div class="menu-items-secondary">
                 <ul>
-                    <li *ngFor="let item of menuItemsSecondary"><a [routerLink]="item.href">{{item.name}}</a></li>
+                    <li *ngFor="let item of menuItemsSecondary"><a [routerLink]="item.href">{{item.name}}</a></li>                    
                 </ul>
             </div>
         </div>

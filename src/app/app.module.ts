@@ -13,6 +13,7 @@ import { MenuComponent } from './menu/menu.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { ImageService } from './services/image.service';
+import { InfostripComponent } from './infostrip/infostrip.component';
 
 //import {  } from '@angular/animations'; 
 
@@ -23,7 +24,8 @@ import { ImageService } from './services/image.service';
     TopbarComponent,
     ImageComponent,
     Type1Component,
-    HomeComponent
+    HomeComponent,
+    InfostripComponent
   ],
   imports: [
     BrowserModule,

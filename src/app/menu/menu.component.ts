@@ -30,7 +30,14 @@ export class MenuComponent implements OnInit {
     this.menuItemsMain.push({ name: "M", href: "/"});
     this.menuItemsMain.push({ name: "Approved Used Cars", href: "/"});
     this.menuItemsMain.push({ name: "Owner's Circle", href: "/"});
-    this.menuItemsMain.push({ name: "BMW Driver Training", href: "/"});
+    this.menuItemsMain.push({ name: "BMW Driver Training", href: "/", dropdown: true, options:[
+      {name: 'Overview', href:'/'},
+      {name: 'About Us', href:'/'},
+      {name: 'Courses', href:'/'},
+      {name: 'Corporate and Team Events', href:'/'},
+      {name: 'Instructors', href:'/'},
+      {name: 'How to find Us', href:'/'},
+    ]});
 
     this.menuItemsSecondary.push({ name: "Virtual Dealer", href:""});
     this.menuItemsSecondary.push({ name: "Products", href:""});
