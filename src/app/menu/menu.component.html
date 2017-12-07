@@ -4,14 +4,10 @@
         <div class="menu-items">
             <div class="menu-items-primary">
                 <ul >
-                    <li class="bmw-li" *ngFor="let item of menuItemsMain" ><a [routerLink]="item.href" routerLinkActive="active">{{item.name}}</a>
+                    <li [ngClass]="{'bmw-li-active' : item.active,  'bmw-li' : !item.active,  'drop-down' : item.dropdown  }" *ngFor="let item of menuItemsMain" >
+                        <a [routerLink]="item.href" [routerLinkActive]="['active']">{{item.name}}</a>
                         <ul class="dropdown-body" *ngIf="item.dropdown">
-                            <li><a href="#">Overview</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Courses</a></li>
-                            <li><a href="#">Corporate and Team Events</a></li>
-                            <li><a href="#">Instructors</a></li>
-                            <li><a href="#">How to find Us</a></li>
+                            <li *ngFor="let sub of item.options"><a [routerLink]="sub.href">{{sub.name}}</a></li>
                         </ul>
                     </li>
                 </ul>

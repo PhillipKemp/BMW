@@ -1,80 +1,106 @@
 @import "../../stylesheet-variables.scss";
 
+
+@mixin tab($clr, $border, $size){
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+
+    float: left;
+    position: relative;
+    height: $size;
+    width: 65px;
+    text-align: center;
+
+    border-left: 1px solid $border;
+    border-right: 1px solid $border;
+    border-top: 1px solid$border;
+
+    background-color: white;
+
+    z-index: 10;
+
+    margin-right: 3px;
+
+    color: $clr;
+
+    cursor: pointer;
+
+    transition: $fast-transition;
+
+    &:hover{
+        color: $color-primary-blue;
+    }
+
+    &:before {
+        position:absolute; 
+        right:-1px; 
+        top:-1px; 
+        content:'';
+        border-top: 8px solid $border;
+        border-left: 8px solid transparent;
+    }
+
+    &:after {
+        position:absolute; 
+        right:-2px; 
+        top:-2px; 
+        content:'';
+        border-top: 8px solid white;
+        border-left: 8px solid transparent;
+    }
+}
+
+@mixin options($border){
+    width: 100%;
+    min-height: 121px;
+    margin-top:1px;
+    
+    font-size: $font-size-min;
+    border: 1px solid $border;
+    padding-top: 11px;
+    ul{
+        padding-left: 12px;
+        list-style: none;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+
+        li{
+            cursor: pointer;
+            color: $color-secondary-darkgray;
+            a{
+                margin-right: 2px;
+                text-decoration: none;
+                transition: $fast-transition;
+                &:hover{
+                    color: $color-primary-blue;
+                }
+                
+            }
+            line-height: 17px;
+            
+        }
+    }
+}
+
+
 @mixin mini-menu(){
     .header{
         width: 100%;
         height: 20px;
         line-height: 20px;
-        margin-bottom: 11px;
         font-size: 12px;
+        .active-tab{
+            @include tab($color-primary-blue, $color-primary-blue, 21px);
+        }
+
         .tab{
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-
-            float: left;
-            position: relative;
-            height: 20px;
-            width: 65px;
-            text-align: center;
-            border-left: 1px solid $color-secondary-lightgray;
-            border-right: 1px solid $color-secondary-lightgray;
-            border-top: 1px solid $color-secondary-lightgray;
-            margin-right: 3px;
-
-            color: $color-secondary-darkgray;
-
-            cursor: pointer;
-
-            transition: $transition;
-
-            &:hover{
-                color: $color-primary-blue;
-            }
-
-            &:before {
-                position:absolute; 
-                right:-1px; 
-                top:-1px; 
-                content:'';
-                border-top: 8px solid $color-secondary-lightgray;
-                border-left: 8px solid transparent;
-            }
-
-            &:after {
-                position:absolute; 
-                right:-2px; 
-                top:-2px; 
-                content:'';
-                border-top: 8px solid white;
-                border-left: 8px solid transparent;
-            }
+            @include tab($color-secondary-darkgray,$color-secondary-lightgray,20px);
         }
     }
     .options{
-        width: 100%;
-        margin-bottom: 11px;
-        min-height: 100px;
-        font-size: $font-size-min;
-        ul{
-            padding-left: 12px;
-            list-style: none;
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-
-            li{
-                cursor: pointer;
-                color: $color-secondary-darkgray;
-                a{
-                    margin-right: 2px;
-                    text-decoration: none;
-                    
-                }
-                line-height: 17px;
-                
-            }
-        }
+        @include options($color-primary-blue);
     }
 }
 
@@ -84,15 +110,7 @@
     -webkit-user-select: none;
     -moz-user-select: none;
 
-    color: $color-secondary-darkgray;
-
-    cursor: pointer;
-    transition: $transition;
-
-    &:hover{
-        color: black;
-    }
-
+    color: $color-secondary-gray;
     margin-right: $marginRight;
 
     .header{
@@ -101,6 +119,32 @@
         line-height: 20px;
         margin-bottom: 11px;
         font-size: 12px;
+
+        .mini-selector{
+            font-size: $font-size-min;
+            width: 40px;
+            height: 20px;
+            float: right;
+            div{
+                float: left;
+                min-width: 5px;
+                height: 20px;
+                &:nth-child(1),  &:nth-child(3){
+                    cursor: pointer;
+                    &:hover{
+                        color: $color-primary-blue;
+                    }
+                    
+                }
+                &:nth-child(2){
+                    width: 30px;
+                    text-align: center;
+                }
+               
+                
+            }
+        }
+       
     }
 
     .image{
@@ -118,9 +162,16 @@
         min-height: 57px;
         font-size: $font-size-min;
         div{
+            transition: $fast-transition;
             &:nth-child(1){
                 height: 20px;
                 line-height: 20px;
+            }
+            &:nth-child(2){
+                cursor: pointer;
+                &:hover{
+                    color: $color-secondary-darkgray;
+                }
             }
         }
     }

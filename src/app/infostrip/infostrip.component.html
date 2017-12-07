@@ -11,52 +11,76 @@
   </div>
 
   <div class="secondary-info">
-      <div class="header">Financial Services</div>
-      <div class="image">
-        <img src="../../assets/BMWSF.png" />
+      <div class="header">
+        Financial Services
+        <div class="mini-selector">
+          <div (click)="prevFinancialServices()"><fa name="caret-left"></fa></div>
+          <div>{{financialService.index + 1}} / {{amountFinancialServices}}</div>
+          <div (click)="nextFinancialServices()"><fa name="caret-right"></fa></div>
+        </div>
       </div>
-      <div class="content">
-        <div><fa name="caret-right"></fa>BMW Financial Services</div>
-        <div>Click here to view the latest exclusive offers from BMW Financial services.</div>
+      <div [@quickFadeAnimation]='financialService'>
+        <div class="image">
+          <img src="../../assets/BMWSF.png" />
+        </div>
+        <div class="content">
+          <div><fa name="caret-right"></fa>{{financialService.name}}</div>
+          <div><a>{{financialService.content.text}}</a></div>
+        </div>
       </div>
   </div>
 
   <div class="secondary-info">
-      <div class="header">Social Networking</div>
-      <div class="image">
-        <img src="../../assets/Facebook.jpg" />
+      <div class="header">
+          Social Networking
+          <div class="mini-selector">
+            <div (click)="prevSocialMedia()"><fa name="caret-left"></fa></div>
+            <div>{{socialMedia.index + 1}} / {{amountSocialMedia}}</div>
+            <div (click)="nextSocialMedia()"><fa name="caret-right"></fa></div>
+          </div>
       </div>
-      <div class="content">
-        <div><fa name="caret-right"></fa>Facebook fan Page</div>
-        <div>Join us on Facebook for the latest BMW Driver Training information, galleries and more.</div>
+      <div [@quickFadeAnimation]='socialMedia'>
+        <div class="image">
+          <img [src]="socialMedia.url" />
+        </div>
+        <div class="content">
+          <div><fa name="caret-right"></fa>{{socialMedia.name}}</div>
+          <div>{{socialMedia.content.text}}</div>
+        </div>
       </div>
+      
   </div>
 
   <div class="tertiary-info">
-      <div class="header">Directions</div>
-      <div class="image">
-        <img src="../../assets/Directions.jpg" />
+      <div class="header">
+          Directions
+          <div class="mini-selector">
+            <div (click)="prevDirections()"><fa name="caret-left"></fa></div>
+            <div>{{directions.index + 1}} / {{amountDirections}}</div>
+            <div (click)="nextDirections()"><fa name="caret-right"></fa></div>
+          </div>
       </div>
-      <div class="content">
-        <div><fa name="caret-right"></fa>Driver Training Venue.</div>
-        <div>Find directions to BMW Driver Training, situated at the Kyalami Grand Prix Circuit. </div>
+      <div [@quickFadeAnimation]='directions'>
+        <div class="image">
+          <img src="../../assets/Directions.jpg" />
+        </div>
+        <div class="content">
+          <div><fa name="caret-right"></fa>{{directions.name}}</div>
+          <div>{{directions.content.text}}</div>
+        </div>
       </div>
   </div>
 
   <div class="mini-menu">
     <div class="header">
-      <div class="tab">Courses</div>
-      <div class="tab">Links</div>
+      <div [ngClass]="{ 'active-tab' : tab.active, 'tab': !tab.active }" *ngFor="let tab of miniMenu" (click)="changeTab(tab)" >{{tab.name}}</div>
     </div>
     <div class="options">
-      <ul>
-        <li><fa name="caret-right"></fa><a>Collision Avoidance</a></li>
-        <li><fa name="caret-right"></fa><a>High Performance Driving</a></li>
-        <li><fa name="caret-right"></fa><a>Defensing Driving</a></li>
-        <li><fa name="caret-right"></fa><a>Hijack Privention</a></li>
-        <li><fa name="caret-right"></fa><a>Packages</a></li>
-        <li><fa name="caret-right"></fa><a>Course Payment</a></li>
-      </ul>
+        <div [@quickFadeAnimation]='miniOptions'>
+          <ul>
+            <li *ngFor="let option of miniOptions"><fa name="caret-right"></fa><a>{{option.name}}</a></li>
+          </ul>
+      </div>
     </div>
   </div>
 

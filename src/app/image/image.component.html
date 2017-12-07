@@ -1,16 +1,21 @@
 <div class="image-slider">
-  <img [src]="mainImage.img"/>
-  <div class="image-details">
-    <h1>{{mainImage.details.main}}</h1>
-    <h2>{{mainImage.details.secondary}}</h2>
-    <a class="bmw-primary-button" routerLink="/1">
-      <fa name="caret-right"></fa>
-      {{mainImage.details.button.text}}
-    </a>
+  <div [@slowFadeAnimation]='state'>
+      <img [src]="mainImage.img"/>
+      <div class="go-prev" (click)="prevImage()"><fa name="chevron-left"></fa></div>
+      <div class="go-next" (click)="nextImage()"><fa name="chevron-right"></fa></div>
+      <div class="image-details">
+        <h1>{{mainImage.details.main}}</h1>
+        <h2>{{mainImage.details.secondary}}</h2>
+        <a class="bmw-primary-button" routerLink="/1">
+          <fa name="caret-right"></fa>
+          {{mainImage.details.button.text}}
+        </a>
+      </div>
   </div>
+ 
   <div class="image-controls">
     <div *ngFor="let thumb of sliderImages" class="thumb" (click)="openImage(thumb)">
-        <img [src]="thumb.img" />
+        <img [src]="thumb.img" (click)="animate()" />
         <div *ngIf="thumb.showing"></div>
     </div>
   </div>

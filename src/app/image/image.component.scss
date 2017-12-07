@@ -5,6 +5,34 @@ $height-width-ratio: $height-max / $width-max;
 
 @import "../../stylesheet-variables.scss";
 
+@mixin navigation(){
+    width: 40px;
+    //background-color: red;
+    height: 80%;
+    position: absolute;
+    top: 90px;
+    cursor: pointer;
+    &:hover{
+        fa{
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+    }
+    fa{
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        font-size: 2.4em;
+        transform: translate(0, -50%);
+        color: rgba(255, 255, 255, 0.1);
+        transition: $transition;
+       
+       
+    }
+    
+}
+
 .image-slider{
     position: relative;
     min-width: $width-max;
@@ -14,6 +42,16 @@ $height-width-ratio: $height-max / $width-max;
     }
     width: 100%;
 
+    .go-next{
+        right: 0;
+        @include navigation();
+    }
+
+    .go-prev{
+        left: 0;
+        @include navigation();
+    }
+
     .image-details{
         position: absolute;
         top: 120px;
@@ -21,6 +59,7 @@ $height-width-ratio: $height-max / $width-max;
         min-height: 80px;
         left: $page-margin-left;
         h1, h2{
+            text-shadow: $box-shadow;
             color: white;
         }
         .bmw-primary-button{

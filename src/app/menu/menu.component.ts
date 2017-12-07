@@ -19,18 +19,18 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
 
-    this.menuItemsMain.push({ name: "Home", href: "/home"});
-    this.menuItemsMain.push({ name: "1", href: "/1"});
-    this.menuItemsMain.push({ name: "3", href: "/"});
-    this.menuItemsMain.push({ name: "5", href: "/"});
-    this.menuItemsMain.push({ name: "6", href: "/"});
-    this.menuItemsMain.push({ name: "7", href: "/"});
-    this.menuItemsMain.push({ name: "X", href: "/"});
-    this.menuItemsMain.push({ name: "Z4", href: "/"});
-    this.menuItemsMain.push({ name: "M", href: "/"});
-    this.menuItemsMain.push({ name: "Approved Used Cars", href: "/"});
-    this.menuItemsMain.push({ name: "Owner's Circle", href: "/"});
-    this.menuItemsMain.push({ name: "BMW Driver Training", href: "/", dropdown: true, options:[
+    this.menuItemsMain.push({active: true, name: "Home", href: "/home"});
+    this.menuItemsMain.push({active: false, name: "1", href: "/1"});
+    this.menuItemsMain.push({active: false, name: "3", href: "/"});
+    this.menuItemsMain.push({active: false, name: "5", href: "/"});
+    this.menuItemsMain.push({active: false, name: "6", href: "/"});
+    this.menuItemsMain.push({active: false, name: "7", href: "/"});
+    this.menuItemsMain.push({active: false, name: "X", href: "/"});
+    this.menuItemsMain.push({active: false, name: "Z4", href: "/"});
+    this.menuItemsMain.push({active: false, name: "M", href: "/"});
+    this.menuItemsMain.push({active: false, name: "Approved Used Cars", href: "/"});
+    this.menuItemsMain.push({active: false, name: "Owner's Circle", href: "/"});
+    this.menuItemsMain.push({active: false, name: "BMW Driver Training", href: "/", dropdown: true, options:[
       {name: 'Overview', href:'/'},
       {name: 'About Us', href:'/'},
       {name: 'Courses', href:'/'},

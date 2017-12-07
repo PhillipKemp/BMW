@@ -13,6 +13,7 @@ import { MenuComponent } from './menu/menu.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { ImageService } from './services/image.service';
+import { ContentService } from './services/content.service';
 import { InfostripComponent } from './infostrip/infostrip.component';
 
 //import {  } from '@angular/animations'; 
@@ -37,7 +38,7 @@ import { InfostripComponent } from './infostrip/infostrip.component';
     ]),
     AngularFontAwesomeModule
   ],
-  providers: [ImageService],
+  providers: [ImageService, ContentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

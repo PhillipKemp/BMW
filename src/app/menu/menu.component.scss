@@ -3,6 +3,7 @@
 @mixin logo{
     position: absolute;
     top: 0;
+    box-shadow: $box-shadow
 };
 
 @mixin menu-line($fontSize){
@@ -15,7 +16,7 @@
 
 };
 
-@mixin menu-line-item(){
+@mixin menu-line-item($clr){
     float: left;
     margin-right: 10px;
     background: transparent;
@@ -23,7 +24,7 @@
     cursor: pointer;
     a{
         background-color: transparent;
-        color: $color-primary-white;
+        color: $clr;
         text-decoration: none;
         transition: $transition;
         &:hover{
@@ -40,7 +41,7 @@
     width: 100%;
     height: 100px;
     background-color: transparent;
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.45); 
+    box-shadow: $box-shadow; 
     z-index: 10000;
     
     .menu-top{
@@ -60,38 +61,29 @@
             width: 70%;
             height: 50px;
             background-color: transparent;
+
+           
+
+
             .menu-items-primary{
                 @include menu-line(15px);
                 border-bottom: 1px lightgray solid;
                               
                 ul{
                     font-family: $bmw-font-bold;
-                    list-style: none;                   
-
-                    .bmw-li{
-                        position: relative;
-                       @include menu-line-item();
-
-                        &:nth-child(1){
-                            font-family: $bmw-font-light;
-                        }
-                        &:nth-child(10){
-                            font-family: $bmw-font-light;
-                        }
-                        &:nth-child(11){
-                            font-family: $bmw-font-light;
-                        }
-                        &:nth-child(12){
-                            font-family: $bmw-font-light;
-                        }  
-
+                    list-style: none;     
+                    
+                    .drop-down{
+                        padding: 0 2px;
+                        transition: $transition;
                         &:hover{
-                            .dropdown-body{
-                                visibility: visible;
-                                opacity: 1;
+                            background-color: white !important;
+                            a{
+                                color: $color-primary-blue !important;
                             }
+                            
                         }
-                        
+
                         .dropdown-body{
                             opacity: 0;
                             visibility: hidden;
@@ -103,9 +95,9 @@
                             z-index: 100;
                             width: 198px;
                             height: 288px;
-                            color: red;
                             padding: 15px 0;
                             transition: $transition;
+                            
                             li{
                                 float:none;
                                 width:100%;
@@ -132,6 +124,56 @@
                         }
                     }
 
+                    .bmw-li-active{
+                        position: relative;
+                        @include menu-line-item($color-primary-blue);
+ 
+                         &:nth-child(1){
+                             font-family: $bmw-font-light;
+                         }
+                         &:nth-child(10){
+                             font-family: $bmw-font-light;
+                         }
+                         &:nth-child(11){
+                             font-family: $bmw-font-light;
+                         }
+                         &:nth-child(12){
+                             font-family: $bmw-font-light;
+                         }  
+ 
+                         &:hover{
+                             .dropdown-body{
+                                 visibility: visible;
+                                 opacity: 1;
+                             }
+                         }
+                    }
+
+                    .bmw-li{
+                        position: relative;
+                       @include menu-line-item($color-primary-white);
+
+                        &:nth-child(1){
+                            font-family: $bmw-font-light;
+                        }
+                        &:nth-child(10){
+                            font-family: $bmw-font-light;
+                        }
+                        &:nth-child(11){
+                            font-family: $bmw-font-light;
+                        }
+                        &:nth-child(12){
+                            font-family: $bmw-font-light;
+                        }  
+
+                        &:hover{
+                            .dropdown-body{
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                        }
+                    }
+
                     
                 }
             }
@@ -142,7 +184,7 @@
                     list-style: none;
                     background: transparent;
                     li{
-                        @include menu-line-item();
+                        @include menu-line-item($color-primary-white);
                     }
                 }
             }
