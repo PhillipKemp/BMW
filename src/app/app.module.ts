@@ -14,7 +14,10 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { ImageService } from './services/image.service';
 import { ContentService } from './services/content.service';
+import { MenuService } from './services/menu.service';
 import { InfostripComponent } from './infostrip/infostrip.component';
+import { FooterComponent } from './footer/footer.component';
+import { PlaceholderComponent } from './placeholder/placeholder.component';
 
 //import {  } from '@angular/animations'; 
 
@@ -26,7 +29,9 @@ import { InfostripComponent } from './infostrip/infostrip.component';
     ImageComponent,
     Type1Component,
     HomeComponent,
-    InfostripComponent
+    InfostripComponent,
+    FooterComponent,
+    PlaceholderComponent
   ],
   imports: [
     BrowserModule,
@@ -34,11 +39,11 @@ import { InfostripComponent } from './infostrip/infostrip.component';
     RouterModule.forRoot([
       { path: '', pathMatch: 'full', redirectTo: 'home',  },
       { path: "home", component: HomeComponent },
-      { path: "1", component: Type1Component}
+      { path: "placeholder", component: PlaceholderComponent}
     ]),
     AngularFontAwesomeModule
   ],
-  providers: [ImageService, ContentService],
+  providers: [ImageService, ContentService, MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

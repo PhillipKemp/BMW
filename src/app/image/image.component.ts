@@ -66,6 +66,7 @@ export class ImageComponent implements OnInit {
     this.sliderImages = this.imageService.getImages();
     this.mainImage = this.sliderImages[0];
     this.mainImage["showing"] = true;
+    
   }
 
 }

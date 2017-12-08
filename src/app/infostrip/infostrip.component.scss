@@ -92,7 +92,7 @@
         line-height: 20px;
         font-size: 12px;
         .active-tab{
-            @include tab($color-primary-blue, $color-primary-blue, 21px);
+            @include tab($color-primary-blue, $color-primary-blue, 22px);
         }
 
         .tab{
@@ -178,8 +178,9 @@
 }
 
 .info-strip{
+    position: relative;
     margin-top: 10px;
-    width: 1000px;
+    width:95%;
     min-height: 20px;
     overflow: auto;
     padding: 0 30px;    

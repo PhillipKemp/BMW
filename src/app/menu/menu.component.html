@@ -4,8 +4,11 @@
         <div class="menu-items">
             <div class="menu-items-primary">
                 <ul >
-                    <li [ngClass]="{'bmw-li-active' : item.active,  'bmw-li' : !item.active,  'drop-down' : item.dropdown  }" *ngFor="let item of menuItemsMain" >
-                        <a [routerLink]="item.href" [routerLinkActive]="['active']">{{item.name}}</a>
+                    <li [ngClass]="{'bmw-li-active' : item.active,  'bmw-li' : !item.active,  'drop-down' : item.dropdown  }"
+                    (click) = 'makeMenuItemActive(item)' 
+                    *ngFor="let item of menuItemsMain" >
+                        <a *ngIf="item.dropdown">{{item.name}}</a>
+                        <a *ngIf="!item.dropdown" [routerLink]="item.href" [routerLinkActive]="['active']">{{item.name}}</a>
                         <ul class="dropdown-body" *ngIf="item.dropdown">
                             <li *ngFor="let sub of item.options"><a [routerLink]="sub.href">{{sub.name}}</a></li>
                         </ul>
@@ -17,6 +20,28 @@
                     <li *ngFor="let item of menuItemsSecondary"><a [routerLink]="item.href">{{item.name}}</a></li>                    
                 </ul>
             </div>
+        </div>
+        <div class="menu-hamburger">
+            <fa name="bars"></fa>
+            <div class="hamburger">
+                <div class="hamburger-main">
+                    <ul class="normal-item">
+                        <li (click) = 'makeMenuItemActive(item)' *ngFor="let item of menuItemsMain" >
+                            <a [routerLink]="item.href" [routerLinkActive]="['active']">{{item.name}}</a>
+                            <ul class="hamburger-dropdown" *ngIf="item.dropdown">
+                                <li *ngFor="let sub of item.options"><a [routerLink]="sub.href">{{sub.name}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hamburger-secondary">
+                    <ul>
+                        <li *ngFor="let item of menuItemsSecondary"><a [routerLink]="item.href">{{item.name}}</a></li>                    
+                    </ul>
+                </div>
+               
+            </div>
+            
         </div>
     </div>
     <img class="logo-bmw" src="../../assets/Logo-bmw.png"/>

@@ -1,13 +1,11 @@
+@import "../../stylesheet-variables.scss";
+
 $width-max: 985px;
 $height-max: 355px;
-
 $height-width-ratio: $height-max / $width-max;
-
-@import "../../stylesheet-variables.scss";
 
 @mixin navigation(){
     width: 40px;
-    //background-color: red;
     height: 80%;
     position: absolute;
     top: 90px;
@@ -35,8 +33,9 @@ $height-width-ratio: $height-max / $width-max;
 
 .image-slider{
     position: relative;
-    min-width: $width-max;
-    min-height: $height-max;
+    //I am going fully responsive on the image:
+    //min-width: $width-max;
+    //min-height: $height-max;
     img{
         width: 100%;
     }
@@ -75,7 +74,7 @@ $height-width-ratio: $height-max / $width-max;
         height: 40px;
         z-index: 20;
         background-color: white;
-        padding-right: 100px;
+        padding-right: 20px;
         .thumb{
             position: relative;
             margin-left: 5px;

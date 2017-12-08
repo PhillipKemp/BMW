@@ -3,7 +3,8 @@
 @mixin logo{
     position: absolute;
     top: 0;
-    box-shadow: $box-shadow
+    box-shadow: $box-shadow;
+    transition: $fast-transition;
 };
 
 @mixin menu-line($fontSize){
@@ -22,6 +23,12 @@
     background: transparent;
     max-width: $menu-item-max-width;
     cursor: pointer;
+    &:hover{
+        a{
+            color: darken($color-primary-blue, 0);
+        }
+        
+    }
     a{
         background-color: transparent;
         color: $clr;
@@ -31,7 +38,29 @@
             color: darken($color-primary-blue, 0);
         }
     }
+}
+
+@media screen and (max-width: 1020px) {
+   .menu{
+        .menu-body{
+            .menu-items{
+                display: none;
+            }
+            .menu-hamburger{
+                visibility: visible !important;
+               
+            }
+        }
+
+        .logo-bmw{
+            right: 50px !important;
+        }
     
+        .logo-name{
+            right: 142px !important;;
+        }
+   }
+
 
 }
 
@@ -57,13 +86,111 @@
         background: $color-primary-gray-opacity;
         padding-top: 10px;
         padding-left: 30px;
+
+        .menu-hamburger{
+            visibility: hidden;
+            position: relative;
+            width: 30px;
+            &:hover{
+                .hamburger{
+                    opacity: 1;
+                    visibility: visible;
+                }
+                
+            }
+            fa{
+                display: block;
+                margin-top: 5px;
+                height: 55px;
+                font-size: 2em;
+                color: white;
+                opacity: 0.7;
+                width: 30px;
+                text-align: center;
+                transition: $fast-transition;
+                &:hover{
+                    cursor: pointer;
+                    opacity: 1;
+                }
+            }
+            .hamburger{
+                opacity: 0;
+                visibility: hidden;
+                position:absolute;
+                top:57px;
+                left:-30px;
+                background: $color-primary-gray-opacity;
+                padding:0;
+                z-index: 100;
+                min-width: 400px;
+                min-height: 288px;
+                transition: $transition;
+                padding: 15px 0;
+                box-shadow: $box-shadow;
+                .hamburger-main{
+                    float: left;
+                    width: 170px;
+                    min-height: 100px;
+                    margin-left: 30px;
+                    border-right: 1px solid $color-secondary-lightgray;
+                    overflow: auto;
+                    padding-right: 10px;
+                    .normal-item{
+                        list-style: none;
+                        li{
+                            @include menu-line-item($color-primary-white);
+                            max-width: 250px !important;
+                            width: 100% !important;
+                            margin-bottom: 2px;
+                            .hamburger-dropdown{
+                                font-size: 13px;
+                                padding-top: 2px;
+                                padding-left: 5px;
+                                list-style: none;
+                                li{
+                                    width: 100%;
+                                    &:hover{
+                                        a{
+                                            color: $color-primary-blue !important;
+                                        }
+                                    }
+                                    a{
+                                        color: darken($color-primary-white,10) !important;
+                                        &:hover{
+                                            color: $color-primary-blue !important;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                };
+                .hamburger-secondary{
+                    float: left;
+                    width: 150px;
+                    min-height: 100px;
+                    padding: 0 10px;
+                    ul{
+                        font-size: 12px;
+                        font-family: $bmw-font-light;
+                        list-style: none;
+                        background: transparent;
+                        li{
+                            width: 100%;
+                            @include menu-line-item($color-primary-white);
+                            margin-bottom: 2px;
+                        }
+                    }
+                }
+               
+            }
+        }
+
         .menu-items{
             width: 70%;
             height: 50px;
             background-color: transparent;
-
-           
-
+            transition: $transition;
 
             .menu-items-primary{
                 @include menu-line(15px);
