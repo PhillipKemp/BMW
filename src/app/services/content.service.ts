@@ -9,27 +9,27 @@ export class ContentService {
     options: [
         {
           name: 'Collision Avoidance',
-          href: ''
+          href: '/collisionavoidance'
         },
         {
           name: 'High Performance Driving',
-          href: ''
+          href: '/highperformancedriving'
         },
         {
           name: 'Defensing Driving',
-          href: ''
+          href: '/defensivedriving'
         },
         {
           name: 'Hijack Privention',
-          href: ''
+          href: '/hijackprevention'
         },
         {
           name: 'Packages',
-          href: ''
+          href: '/packages'
         },
         {
           name: 'Course Payment',
-          href: ''
+          href: '/coursepayment'
         }
       ]    
     },{
@@ -38,8 +38,21 @@ export class ContentService {
       options: [
         {
           name: 'Home',
-          href: ''
+          href: '/'
+        },
+        {
+          name: 'Products',
+          href: '/products'
+        },
+        {
+          name: 'Sevices',
+          href: '/services'
+        },
+        {
+          name: 'Virtual Dealer',
+          href: '/vitualdealer'
         }
+        
       ]    
     }
   ];

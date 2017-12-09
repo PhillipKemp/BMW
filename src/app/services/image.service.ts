@@ -16,7 +16,7 @@ export class ImageService {
         secondary: 'Experience BMW Performance Accessories.',
         button: {
           text: 'Click here to read more.',
-          url: ''
+          url: '/placeholder'
         },
         showing: 'false'
       }
@@ -29,7 +29,7 @@ export class ImageService {
         secondary: 'Experience BMW Performance Accessories.',
         button: {
           text: 'Click here to read more.',
-          url: ''
+          url: '/placeholder'
         },
         showing: 'false'
       }
@@ -42,7 +42,7 @@ export class ImageService {
         secondary: 'Experience BMW Performance Accessories.',
         button: {
           text: 'Click here to read more.',
-          url: ''
+          url: '/placeholder'
         },
         showing: 'false'
       }
@@ -55,7 +55,7 @@ export class ImageService {
         secondary: 'Experience BMW Performance Accessories.',
         button: {
           text: 'Click here to read more.',
-          url: ''
+          url: '/placeholder'
         },
         showing: 'false'
       }
