@@ -57,7 +57,9 @@
         }
     
         .logo-name{
-            right: 142px !important;;
+            right: 142px !important;
+
+            
         }
    }
 
@@ -327,6 +329,9 @@
     .logo-name{
         @include logo();
         right: 242px;
+        &:hover{
+            cursor: pointer;
+        }
     }
     
 }

@@ -10,6 +10,8 @@ import { quickFadeAnimation } from '../animations/quickfade.animation';
 })
 export class InfostripComponent implements OnInit {
 
+  driverTraining: any;
+
   amountFinancialServices: any;
   financialService: any;
 
@@ -22,7 +24,10 @@ export class InfostripComponent implements OnInit {
   miniOptions: [any];
   miniMenu: any;
 
-  constructor(private contentService : ContentService) { 
+  constructor(private contentService : ContentService) {
+    
+    this.driverTraining = contentService.driverTrainingOverview;
+    
     this.financialService = contentService.getFinancialServiceContent(0);
     this.amountFinancialServices = contentService.financialServiceContent.length;
 

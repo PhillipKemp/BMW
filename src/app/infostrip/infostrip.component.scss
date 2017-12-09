@@ -68,8 +68,10 @@
 
         li{
             cursor: pointer;
-            color: $color-secondary-darkgray;
+            
             a{
+                text-decoration: none;
+                color: $color-secondary-darkgray;
                 margin-right: 2px;
                 text-decoration: none;
                 transition: $fast-transition;
@@ -169,9 +171,14 @@
             }
             &:nth-child(2){
                 cursor: pointer;
-                &:hover{
-                    color: $color-secondary-darkgray;
+                a{
+                    text-decoration: none;
+                    color: $color-primary-gray;
+                    &:hover{
+                        color: $color-secondary-darkgray;
+                    }
                 }
+                
             }
         }
     }

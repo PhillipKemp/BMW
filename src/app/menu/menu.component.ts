@@ -25,6 +25,10 @@ export class MenuComponent implements OnInit {
     item.active = true;
   };
 
+  goTo: Function = function(href){
+    window.location.href ='/' + href;
+  }
+
   ngOnInit() {
 
   }

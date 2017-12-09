@@ -47,6 +47,8 @@ import { HijackPriventionComponent } from './hijack-privention/hijack-privention
 import { PackagesComponent } from './packages/packages.component';
 import { CoursePaymentComponent } from './course-payment/course-payment.component';
 import { VirtualAction } from 'rxjs/scheduler/VirtualTimeScheduler';
+import { SocialMediaComponent } from './social-media/social-media.component';
+import { DirectionsComponent } from './directions/directions.component';
 
 //import {  } from '@angular/animations'; 
 
@@ -88,7 +90,9 @@ import { VirtualAction } from 'rxjs/scheduler/VirtualTimeScheduler';
     DefensiveDrivingComponent,
     HijackPriventionComponent,
     PackagesComponent,
-    CoursePaymentComponent
+    CoursePaymentComponent,
+    SocialMediaComponent,
+    DirectionsComponent
   ],
   imports: [
     BrowserModule,
@@ -111,7 +115,7 @@ import { VirtualAction } from 'rxjs/scheduler/VirtualTimeScheduler';
       { path: "products", component: ProductsComponent},
       { path: "services", component: ServicesComponent},
       { path: "lifestyleandaccessories", component: LifestyleAndAccessoriesComponent},
-      { path: "bmwfinancialservices", component: LifestyleAndAccessoriesComponent},
+      { path: "bmwfinancialservices", component: BmwFinancialServicesComponent},
       { path: "drivertraining", component: BmwDriverTrainingComponent},
       { path: "overview", component: OverviewComponent},
       { path: "aboutus", component: AboutusComponent},
@@ -125,6 +129,8 @@ import { VirtualAction } from 'rxjs/scheduler/VirtualTimeScheduler';
       { path: "hijackprevention", component: HijackPriventionComponent},
       { path: "packages", component: PackagesComponent},
       { path: "coursepayment", component: CoursePaymentComponent},
+      { path: "social", component: SocialMediaComponent},
+      { path: "directions", component: DirectionsComponent},
     ]),
     AngularFontAwesomeModule
   ],

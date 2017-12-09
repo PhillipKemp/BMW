@@ -63,7 +63,7 @@ export class ContentService {
       name: 'BMW Financial Services',
       content: {
         text: 'Click here to view the latest exclusive offers from BMW Financial services.',
-        href: '/'
+        href: '/bmwfinancialservices'
       }
     },
     {
@@ -71,7 +71,7 @@ export class ContentService {
       name: 'BMW Financial Services 1',
       content: {
         text: '1 - Click here to view the latest exclusive offers from BMW Financial services.',
-        href: '/'
+        href: '/bmwfinancialservices'
       }
     },
     {
@@ -79,10 +79,16 @@ export class ContentService {
       name: 'BMW Financial Services 2',
       content: {
         text: '2 - Click here to view the latest exclusive offers from BMW Financial services.',
-        href: '/'
+        href: '/bmwfinancialservices'
       }
     }
   ];
+
+  driverTrainingOverview: any = {
+    name: 'BMW Driver Training',
+    content: 'Experience more control, attain more safety, protect yourself. Click here for the latest Course information and pricing.',
+    href:'/drivertraining'
+  }
 
   socialMediaContent: [any] = [
     {
@@ -91,7 +97,7 @@ export class ContentService {
       name: 'Facebook fan Page',
       content: {
         text: 'Join us on Facebook for the latest BMW Driver Training information, galleries and more.',
-        href: '/'
+        href: '/social'
       }
     },
     {
@@ -100,7 +106,7 @@ export class ContentService {
       name: 'Twitter fan Page',
       content: {
         text: 'Join us on Twitter for the latest BMW Driver Training information, galleries and more.',
-        href: '/'
+        href: '/social'
       }
     },
     {
@@ -109,7 +115,7 @@ export class ContentService {
       name: 'Facebook fan Page 2',
       content: {
         text: '2 - Join us on Facebook for the latest BMW Driver Training information, galleries and more.',
-        href: '/'
+        href: '/social'
       }
     }
   ];
@@ -120,7 +126,7 @@ export class ContentService {
       name: 'Driver Training Venue',
       content: {
         text: 'Find directions to BMW Driver Training, situated at the Kyalami Grand Prix Circuit. ',
-        href: '/'
+        href: '/directions'
       }
     },
     {
@@ -128,7 +134,7 @@ export class ContentService {
       name: 'Driver Training Venue 1',
       content: {
         text: '1 - Find directions to BMW Driver Training, situated at the Kyalami Grand Prix Circuit. ',
-        href: '/'
+        href: '/directions'
       }
     },
     {
@@ -136,7 +142,7 @@ export class ContentService {
       name: 'Driver Training Venue2',
       content: {
         text: '2 - Find directions to BMW Driver Training, situated at the Kyalami Grand Prix Circuit. ',
-        href: '/'
+        href: '/directions'
       }
     }
   ];
