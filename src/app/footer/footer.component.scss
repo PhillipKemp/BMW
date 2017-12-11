@@ -10,8 +10,8 @@
     background-color: white;
     ul{
         position: absolute;
-        color: $color-primary-gray;
-        font-size: $font-size-min;
+       
+        
         width: 340px;
         overflow: auto;
         padding-left: 10px;
@@ -23,8 +23,14 @@
             line-height: 26px;
             cursor: pointer;
             transition: $transition;
-            &:hover{
-                color: $color-primary-blue;
+          
+            a{
+                text-decoration: none;
+                color: $color-primary-gray;
+                font-size: $font-size-min;
+                &:hover{
+                    color: $color-primary-blue;
+                }
             }
         }
 

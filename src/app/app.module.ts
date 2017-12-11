@@ -49,6 +49,10 @@ import { CoursePaymentComponent } from './course-payment/course-payment.componen
 import { VirtualAction } from 'rxjs/scheduler/VirtualTimeScheduler';
 import { SocialMediaComponent } from './social-media/social-media.component';
 import { DirectionsComponent } from './directions/directions.component';
+import { SitemapComponent } from './sitemap/sitemap.component';
+import { DealerLocatorComponent } from './dealer-locator/dealer-locator.component';
+import { LegislationComponent } from './legislation/legislation.component';
+import { InternetConnectionsComponent } from './internet-connections/internet-connections.component';
 
 //import {  } from '@angular/animations'; 
 
@@ -92,7 +96,11 @@ import { DirectionsComponent } from './directions/directions.component';
     PackagesComponent,
     CoursePaymentComponent,
     SocialMediaComponent,
-    DirectionsComponent
+    DirectionsComponent,
+    SitemapComponent,
+    DealerLocatorComponent,
+    LegislationComponent,
+    InternetConnectionsComponent
   ],
   imports: [
     BrowserModule,
@@ -131,6 +139,10 @@ import { DirectionsComponent } from './directions/directions.component';
       { path: "coursepayment", component: CoursePaymentComponent},
       { path: "social", component: SocialMediaComponent},
       { path: "directions", component: DirectionsComponent},
+      { path: "sitemap", component: SitemapComponent},
+      { path: "internetconnections", component: InternetConnectionsComponent},
+      { path: "legislation", component: LegislationComponent},
+      { path: "dealerlocator", component: DealerLocatorComponent},
     ]),
     AngularFontAwesomeModule
   ],

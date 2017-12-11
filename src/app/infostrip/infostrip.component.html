@@ -6,7 +6,7 @@
     </div>
     <div class="content">
       <div><fa name="caret-right"></fa>{{driverTraining.name}}</div>
-      <div><a [href]='driverTraining.href'>{{driverTraining.content}}</a></div>
+      <div><a [routerLink]='driverTraining.href'>{{driverTraining.content}}</a></div>
     </div>
   </div>
 
@@ -25,7 +25,7 @@
         </div>
         <div class="content">
           <div><fa name="caret-right"></fa>{{financialService.name}}</div>
-          <div><a [href]="financialService.content.href">{{financialService.content.text}}</a></div>
+          <div><a [routerLink]="financialService.content.href">{{financialService.content.text}}</a></div>
         </div>
       </div>
   </div>
@@ -45,7 +45,7 @@
         </div>
         <div class="content">
           <div><fa name="caret-right"></fa>{{socialMedia.name}}</div>
-          <div><a [href]="socialMedia.content.href">{{socialMedia.content.text}}</a></div>
+          <div><a [routerLink]="socialMedia.content.href">{{socialMedia.content.text}}</a></div>
         </div>
       </div>
       
@@ -66,7 +66,7 @@
         </div>
         <div class="content">
           <div><fa name="caret-right"></fa>{{directions.name}}</div>
-          <div><a [href]="directions.content.href">{{directions.content.text}}</a></div>
+          <div><a [routerLink]="directions.content.href">{{directions.content.text}}</a></div>
         </div>
       </div>
   </div>
@@ -78,7 +78,7 @@
     <div class="options">
         <div [@quickFadeAnimation]='miniOptions'>
           <ul>
-            <li *ngFor="let option of miniOptions"><fa name="caret-right"></fa><a [href]='option.href'>{{option.name}}</a></li>
+            <li *ngFor="let option of miniOptions"><fa name="caret-right"></fa><a [routerLink]='option.href'>{{option.name}}</a></li>
           </ul>
       </div>
     </div>
